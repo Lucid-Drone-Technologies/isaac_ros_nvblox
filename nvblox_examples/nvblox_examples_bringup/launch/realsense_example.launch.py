@@ -48,7 +48,7 @@ def generate_launch_description() -> LaunchDescription:
 
     # Globally set use_sim_time if we're running from bag or sim
     actions.append(
-        SetParameter('use_sim_time', True, condition=IfCondition(lu.is_valid(args.rosbag))))
+        SetParameter('use_sim_time', False, condition=IfCondition(lu.is_valid(args.rosbag))))
 
 
     # Realsense
