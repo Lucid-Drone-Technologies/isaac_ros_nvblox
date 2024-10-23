@@ -36,7 +36,9 @@ def add_vslam(args: lu.ArgumentContainer) -> List[Action]:
     base_parameters = {
         'num_cameras': 2,
         'min_num_images': 2,
-        'enable_localization_n_mapping': False,
+        'enable_localization_n_mapping': True,
+        'enable_ground_constraint_in_odometry': True,
+        'enable_ground_constraint_in_slam': True,
         'enable_imu_fusion': False,
         'gyro_noise_density': 0.000244,
         'gyro_random_walk': 0.000019393,
@@ -55,6 +57,7 @@ def add_vslam(args: lu.ArgumentContainer) -> List[Action]:
         'map_frame': 'map',
         'odom_frame': 'odom',
         'base_frame': 'base_link',
+        'publish_map_to_odom_tf': False, # this tf is already published by the amcl node
     }
     realsense_parameters = {
         'enable_rectified_pose': True,
