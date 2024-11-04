@@ -104,6 +104,7 @@ def add_nvblox(args: lu.ArgumentContainer) -> List[Action]:
     parameters.append(camera_config)
     parameters.append({'num_cameras': num_cameras})
     parameters.append({'use_lidar': use_lidar})
+    # Add the global frame parameter when using with AMCL
     parameters.append({'global_frame': "map"})
 
     # Add the nvblox node.
