@@ -104,14 +104,14 @@ def generate_launch_description() -> LaunchDescription:
             condition=IfCondition(lu.is_valid(args.rosbag))))
 
     # Visualization
-    actions.append(
-        lu.include(
-            'nvblox_examples_bringup',
-            'launch/visualization/visualization.launch.py',
-            launch_arguments={
-                'mode': args.mode,
-                'camera': NvbloxCamera.realsense
-            }))
+    #actions.append(
+    #    lu.include(
+    #        'nvblox_examples_bringup',
+    #        'launch/visualization/visualization.launch.py',
+    #        launch_arguments={
+    #            'mode': args.mode,
+    #            'camera': NvbloxCamera.realsense
+    #        }))
 
     # Container
     actions.append(lu.component_container(NVBLOX_CONTAINER_NAME, log_level=args.log_level))

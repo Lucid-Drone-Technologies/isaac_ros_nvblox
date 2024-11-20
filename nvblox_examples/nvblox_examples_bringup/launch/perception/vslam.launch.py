@@ -45,7 +45,6 @@ def add_vslam(args: lu.ArgumentContainer) -> List[Action]:
         'accel_noise_density': 0.001862,
         'accel_random_walk': 0.003,
         'calibration_frequency': 200.0,
-        'rig_frame': 'base_link',
         'imu_frame': 'front_stereo_camera_imu',
         'enable_slam_visualization': True,
         'enable_landmarks_view': True,
@@ -56,14 +55,14 @@ def add_vslam(args: lu.ArgumentContainer) -> List[Action]:
         'debug_dump_path': '/tmp/cuvslam',
         'map_frame': 'map',
         'odom_frame': 'odom',
-        'base_frame': 'base_link',
+        'base_frame': 'base_footprint',
         'publish_map_to_odom_tf': False, # this tf is already published by the amcl node
     }
     realsense_parameters = {
         'enable_rectified_pose': True,
         'enable_image_denoising': False,
         'rectified_images': True,
-        'base_frame': 'camera_link',
+        'base_frame': 'base_footprint',
         'camera_optical_frames': [
             'camera_infra1_optical_frame',
             'camera_infra2_optical_frame',
